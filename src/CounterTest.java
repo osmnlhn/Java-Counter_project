@@ -13,13 +13,13 @@ class CounterTest {
 
     @Test
     void increment() {
-        assertTrue(this.counter.increment()==1);
-        assertTrue(this.counter.increment()==2);
+        assertEquals(1, this.counter.increment());
+        assertEquals(2, this.counter.increment());
 
         this.counter.increment();
         this.counter.increment();
 
-        assertFalse(this.counter.getCount()==2,"Should not return 2 after calling");
+        assertNotEquals(2, this.counter.getCount(), "Should not return 2 after calling");
         assertEquals(4,this.counter.getCount());
         assertNotEquals(3,this.counter.increment());
     }
@@ -27,9 +27,9 @@ class CounterTest {
     @Test
     void decremant() {
         assertEquals(-1,this.counter.decremant());
-        assertTrue(this.counter.decremant()==-2);
+        assertEquals(-2, this.counter.decremant());
         this.counter.decremant();
-        assertFalse(this.counter.getCount()==-2,"should not return -2 after calling");
-        assertTrue(this.counter.getCount()==-3);
+        assertNotEquals(-2, this.counter.getCount(), "should not return -2 after calling");
+        assertEquals(-3, this.counter.getCount());
     }
 }
