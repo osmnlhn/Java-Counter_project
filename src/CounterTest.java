@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class CounterTest {
    Counter counter;
+   //
     @BeforeEach
     void setUp() {
         this.counter= new Counter();
